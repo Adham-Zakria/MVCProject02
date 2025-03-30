@@ -26,6 +26,8 @@ namespace MVCProject02
 
             app.UseRouting();
 
+            app.UseStaticFiles(); // to use wwwroot
+
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapGet("/", async context =>
@@ -68,8 +70,8 @@ namespace MVCProject02
 
             app.MapControllerRoute(
                 name: "Route02",
-                pattern: "{controller}/{action}/{id:int?}/{name:alpha}",
-                defaults: new { Controller = "Movies", action= "GetMovie" } 
+                pattern: "{controller}/{action}/{id:int?}/{name:alpha}"
+                //defaults: new { Controller = "Movies", action= "GetMovie" } 
                // constraints: new {id= @"\d{2}"}
                 );
 
